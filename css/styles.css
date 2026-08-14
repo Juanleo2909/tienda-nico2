@@ -325,7 +325,6 @@ input {
 
 /* Mobile Menu */
 .mobile-menu {
-    display: none;
     position: fixed;
     top: 72px;
     left: 0;
@@ -335,13 +334,14 @@ input {
     z-index: calc(var(--z-fixed) - 1);
     padding: var(--space-xl);
     opacity: 0;
+    visibility: hidden;
     transform: translateY(-10px);
-    transition: opacity var(--transition-base), transform var(--transition-base);
+    transition: opacity var(--transition-base), transform var(--transition-base), visibility var(--transition-base);
 }
 
 .mobile-menu.active {
-    display: block;
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
 }
 
