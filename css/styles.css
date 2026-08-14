@@ -62,21 +62,19 @@
     --z-whatsapp: 50;
 }
 
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-bg: #1B120D;
-        --color-bg-alt: #221711;
-        --color-surface: #241912;
-        --color-text: #F5EDE3;
-        --color-text-secondary: #D4B597;
-        --color-text-muted: #A98F7A;
-        --color-accent: #D7B48A;
-        --color-accent-hover: #EAC59F;
-        --color-accent-light: #3B2A20;
-        --color-border: #4A3629;
-        --color-border-light: #2B1F1A;
-    }
+/* Dark Mode: disabled to keep a consistent brand palette across browsers and extensions */
+:root {
+    --color-bg: #1B120D;
+    --color-bg-alt: #221711;
+    --color-surface: #241912;
+    --color-text: #F5EDE3;
+    --color-text-secondary: #D4B597;
+    --color-text-muted: #A98F7A;
+    --color-accent: #D7B48A;
+    --color-accent-hover: #EAC59F;
+    --color-accent-light: #3B2A20;
+    --color-border: #4A3629;
+    --color-border-light: #2B1F1A;
 }
 
 /* Reduced Transparency */
