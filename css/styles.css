@@ -305,10 +305,58 @@ input {
     transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 .mobile-menu-btn:focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
     border-radius: var(--radius-sm);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-bg);
+    z-index: var(--z-fixed);
+    padding: var(--space-xl);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.mobile-menu.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.mobile-nav-link {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-text);
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-border-light);
 }
 
 /* ========================================

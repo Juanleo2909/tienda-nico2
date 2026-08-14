@@ -406,9 +406,43 @@ function initSmoothScroll() {
                     behavior: 'smooth',
                     block: 'start'
                 });
+                // Close mobile menu if open
+                closeMobileMenu();
             }
         });
     });
+}
+
+/**
+ * Initialize mobile menu
+ */
+function initMobileMenu() {
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (!menuBtn || !mobileMenu) return;
+    
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        menuBtn.classList.toggle('active');
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+            closeMobileMenu();
+        }
+    });
+}
+
+function closeMobileMenu() {
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (menuBtn && mobileMenu) {
+        mobileMenu.classList.remove('active');
+        menuBtn.classList.remove('active');
+    }
 }
 
 /**
@@ -464,6 +498,7 @@ function init() {
     initCategoryTabs();
     initSearch();
     initSmoothScroll();
+    initMobileMenu();
     initScrollReveal();
     initButtonPhysics();
     
