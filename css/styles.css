@@ -332,7 +332,7 @@ input {
     right: 0;
     bottom: 0;
     background-color: var(--color-bg);
-    z-index: var(--z-fixed);
+    z-index: calc(var(--z-fixed) - 1);
     padding: var(--space-xl);
     opacity: 0;
     transform: translateY(-10px);
@@ -343,6 +343,12 @@ input {
     display: block;
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+    .mobile-menu {
+        display: none !important;
+    }
 }
 
 .mobile-nav {
