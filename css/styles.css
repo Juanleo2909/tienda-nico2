@@ -65,17 +65,17 @@
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-bg: #2C1E0F;
-        --color-bg-alt: #3D2A16;
-        --color-surface: #3D2A16;
+        --color-bg: #1B120D;
+        --color-bg-alt: #221711;
+        --color-surface: #241912;
         --color-text: #F5EDE3;
-        --color-text-secondary: #C9A882;
-        --color-text-muted: #8B6F5A;
-        --color-accent: #D4A574;
-        --color-accent-hover: #E8C4A0;
-        --color-accent-light: #4A3520;
-        --color-border: #5A4230;
-        --color-border-light: #3D2A16;
+        --color-text-secondary: #D4B597;
+        --color-text-muted: #A98F7A;
+        --color-accent: #D7B48A;
+        --color-accent-hover: #EAC59F;
+        --color-accent-light: #3B2A20;
+        --color-border: #4A3629;
+        --color-border-light: #2B1F1A;
     }
 }
 
@@ -116,6 +116,15 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     position: relative;
+}
+
+body,
+.hero,
+.products-section,
+.offers-section,
+.contact-section,
+.footer {
+    background-color: var(--color-bg);
 }
 
 /* Grain Overlay */
@@ -375,6 +384,7 @@ input {
     justify-content: center;
     padding: calc(72px + var(--space-4xl)) var(--space-xl) var(--space-4xl);
     text-align: center;
+    background: linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0));
     background-color: var(--color-bg);
     position: relative;
     overflow: hidden;
