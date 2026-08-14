@@ -75,6 +75,7 @@
     --color-accent-light: #3B2A20;
     --color-border: #4A3629;
     --color-border-light: #2B1F1A;
+    --color-card: rgba(255, 255, 255, 0.02);
 }
 
 /* Reduced Transparency */
@@ -175,7 +176,8 @@ input {
     left: 0;
     right: 0;
     z-index: var(--z-fixed);
-    background-color: rgba(245, 237, 227, 0.85);
+    background-color: rgba(26, 17, 12, 0.72);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 }
@@ -382,7 +384,9 @@ input {
     justify-content: center;
     padding: calc(72px + var(--space-4xl)) var(--space-xl) var(--space-4xl);
     text-align: center;
-    background: linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0));
+    background:
+        radial-gradient(circle at top, rgba(215, 180, 138, 0.12), transparent 32%),
+        linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0));
     background-color: var(--color-bg);
     position: relative;
     overflow: hidden;
@@ -408,9 +412,10 @@ input {
     font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 600;
     line-height: 1.1;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em;
     color: var(--color-text);
     margin-bottom: var(--space-lg);
+    text-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
 }
 
 .hero-subtitle {
@@ -440,8 +445,20 @@ input {
     font-size: 0.9375rem;
     font-weight: 500;
     border-radius: var(--radius-full);
-    transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+    transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform 160ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow var(--transition-fast);
     white-space: nowrap;
+    box-shadow: 0 8px 24px rgba(63, 41, 26, 0.12);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+    color: #2d1d11;
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--color-text);
 }
 
 .btn:active {
