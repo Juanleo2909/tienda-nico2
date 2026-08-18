@@ -1,14 +1,12 @@
 /* ========================================
-   TIENDA NICO2 - App Logic
+   REINA GLOWUP - App Logic
    ======================================== */
 
 // ========================================
 // Configuration
 // ========================================
 const CONFIG = {
-    // Cambia este número por tu número de WhatsApp con código de país
     whatsappNumber: '51964005823',
-    // Texto base para mensajes
     defaultMessage: 'Hola, me interesa este producto:'
 };
 
@@ -19,125 +17,187 @@ const products = [
     // Ropa
     {
         id: 1,
-        name: 'Camiseta Básica Negra',
+        name: 'Vestido Floral Midi',
         category: 'ropa',
-        price: 299,
-        oldPrice: null,
+        price: 189,
+        oldPrice: 249,
         size: 'S-XL',
-        image: 'https://picsum.photos/seed/camiseta-negra/600/800',
-        badge: null
+        image: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600',
+        badge: '-24%',
+        rating: 4.8,
+        reviews: 128
     },
     {
         id: 2,
-        name: 'Jeans Slim Fit',
+        name: 'Blusa Seda Beige',
         category: 'ropa',
-        price: 599,
+        price: 89,
         oldPrice: null,
-        size: '28-36',
-        image: 'https://picsum.photos/seed/jeans-slim/600/800',
-        badge: 'Nuevo'
+        size: 'XS-L',
+        image: 'https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600',
+        badge: 'Nuevo',
+        rating: 4.9,
+        reviews: 96
     },
     {
         id: 3,
-        name: 'Sudadera Oversized',
+        name: 'Pantalón Wide Leg',
         category: 'ropa',
-        price: 799,
+        price: 129,
         oldPrice: null,
-        size: 'S-XL',
-        image: 'https://picsum.photos/seed/sudadera-oversized/600/800',
-        badge: null
+        size: '28-36',
+        image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600',
+        badge: null,
+        rating: 4.7,
+        reviews: 84
     },
     {
         id: 4,
-        name: 'Camisa Linen Beige',
+        name: 'Top Cropped Negro',
         category: 'ropa',
-        price: 499,
-        oldPrice: null,
-        size: 'S-XXL',
-        image: 'https://picsum.photos/seed/camisa-linen/600/800',
-        badge: null
+        price: 59,
+        oldPrice: 79,
+        size: 'S-M',
+        image: 'https://images.unsplash.com/photo-1583846783214-7229a91b20ed?w=600',
+        badge: '-25%',
+        rating: 4.6,
+        reviews: 76
     },
     {
         id: 5,
-        name: 'Pantalón Cargo',
+        name: 'Falda Plisada Rosa',
         category: 'ropa',
-        price: 649,
+        price: 99,
         oldPrice: null,
-        size: '28-34',
-        image: 'https://picsum.photos/seed/pantalon-cargo/600/800',
-        badge: null
+        size: 'XS-L',
+        image: 'https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=600',
+        badge: null,
+        rating: 4.8,
+        reviews: 64
     },
     {
         id: 6,
-        name: 'Vestido Midi Floral',
+        name: 'Camisa Oversized Linen',
         category: 'ropa',
-        price: 899,
-        oldPrice: 1199,
-        size: 'XS-L',
-        image: 'https://picsum.photos/seed/vestido-midi/600/800',
-        badge: '-25%'
+        price: 119,
+        oldPrice: null,
+        size: 'S-XXL',
+        image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600',
+        badge: null,
+        rating: 4.7,
+        reviews: 52
     },
     
     // Accesorios
     {
         id: 7,
-        name: 'Cadena Dorada',
+        name: 'Collar Perlas Minimalista',
         category: 'accesorios',
-        price: 199,
+        price: 49,
         oldPrice: null,
         size: 'Único',
-        image: 'https://picsum.photos/seed/cadena-dorada/600/800',
-        badge: null
+        image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600',
+        badge: 'Nuevo',
+        rating: 4.9,
+        reviews: 142
     },
     {
         id: 8,
-        name: 'Gorra Snapback',
+        name: 'Aretes Dorados Circulares',
         category: 'accesorios',
-        price: 249,
+        price: 35,
         oldPrice: null,
         size: 'Único',
-        image: 'https://picsum.photos/seed/gorra-snapback/600/800',
-        badge: 'Nuevo'
+        image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600',
+        badge: null,
+        rating: 4.8,
+        reviews: 98
     },
     {
         id: 9,
-        name: 'Reloj Minimalista',
+        name: 'Bolso Tote Cuero',
         category: 'accesorios',
-        price: 899,
-        oldPrice: null,
+        price: 159,
+        oldPrice: 199,
         size: 'Único',
-        image: 'https://picsum.photos/seed/reloj-minimal/600/800',
-        badge: null
+        image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600',
+        badge: '-20%',
+        rating: 4.7,
+        reviews: 76
     },
     {
         id: 10,
-        name: 'Lente de Sol Aviador',
+        name: 'Reloj Rosa Gold',
         category: 'accesorios',
-        price: 449,
-        oldPrice: 599,
+        price: 89,
+        oldPrice: null,
         size: 'Único',
-        image: 'https://picsum.photos/seed/lente-aviador/600/800',
-        badge: '-25%'
+        image: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600',
+        badge: null,
+        rating: 4.9,
+        reviews: 112
     },
     {
         id: 11,
-        name: 'Bolso Tote',
+        name: 'Gafas de Sol Cat Eye',
         category: 'accesorios',
-        price: 399,
+        price: 69,
         oldPrice: null,
         size: 'Único',
-        image: 'https://picsum.photos/seed/bolso-tote/600/800',
-        badge: null
+        image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600',
+        badge: null,
+        rating: 4.6,
+        reviews: 54
     },
     {
         id: 12,
-        name: 'Cinturón Cuero',
+        name: 'Cinta para Pelo Satin',
         category: 'accesorios',
-        price: 349,
+        price: 19,
         oldPrice: null,
+        size: 'Único',
+        image: 'https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600',
+        badge: null,
+        rating: 4.8,
+        reviews: 88
+    },
+    
+    // Ofertas
+    {
+        id: 13,
+        name: 'Pack Verano Completo',
+        category: 'ofertas',
+        price: 249,
+        oldPrice: 399,
         size: 'S-L',
-        image: 'https://picsum.photos/seed/cinturon-cuero/600/800',
-        badge: null
+        image: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600',
+        badge: '-38%',
+        rating: 4.9,
+        reviews: 45
+    },
+    {
+        id: 14,
+        name: 'Kit Accesorios Dorados',
+        category: 'ofertas',
+        price: 79,
+        oldPrice: 120,
+        size: 'Único',
+        image: 'https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=600',
+        badge: '-34%',
+        rating: 4.8,
+        reviews: 67
+    },
+    {
+        id: 15,
+        name: 'Look Casual Mujer',
+        category: 'ofertas',
+        price: 179,
+        oldPrice: 250,
+        size: 'XS-L',
+        image: 'https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=600',
+        badge: '-28%',
+        rating: 4.7,
+        reviews: 38
     }
 ];
 
@@ -147,30 +207,30 @@ const products = [
 const offers = [
     {
         id: 101,
-        name: 'Pack 2 Camisetas',
-        description: 'Lleva 2 camisetas básicas y ahorra',
-        price: 499,
-        oldPrice: 598,
+        name: 'Pack 2 Blusas',
+        description: 'Lleva 2 blusas de tu elección y ahorra',
+        price: 149,
+        oldPrice: 178,
         icon: 'shirt',
-        message: 'Hola, me interesa el Pack 2 Camisetas - $499 MXN'
+        message: 'Hola, me interesa el Pack 2 Blusas - S/149'
     },
     {
         id: 102,
         name: 'Look Completo',
-        description: 'Camisa + Pantalón + Cinturón',
-        price: 1299,
-        oldPrice: 1497,
+        description: 'Vestido + Accesorios + Bolso',
+        price: 299,
+        oldPrice: 407,
         icon: 'package',
-        message: 'Hola, me interesa el Look Completo - $1299 MXN'
+        message: 'Hola, me interesa el Look Completo - S/299'
     },
     {
         id: 103,
-        name: 'Pack Accesorios',
-        description: 'Cadena + Reloj + Lentes',
-        price: 1299,
-        oldPrice: 1547,
+        name: 'Kit Accesorios',
+        description: 'Collar + Aretes + Reloj',
+        price: 149,
+        oldPrice: 173,
         icon: 'gem',
-        message: 'Hola, me interesa el Pack Accesorios - $1299 MXN'
+        message: 'Hola, me interesa el Kit Accesorios - S/149'
     }
 ];
 
@@ -182,6 +242,9 @@ const offersGrid = document.getElementById('offersGrid');
 const searchInput = document.getElementById('searchInput');
 const noResults = document.getElementById('noResults');
 const categoryTabs = document.querySelectorAll('.tab');
+const searchToggle = document.getElementById('searchToggle');
+const searchOverlay = document.getElementById('searchOverlay');
+const searchClose = document.getElementById('searchClose');
 
 // ========================================
 // State
@@ -192,36 +255,34 @@ let searchQuery = '';
 // ========================================
 // Utility Functions
 // ========================================
-
-/**
- * Format price as currency
- */
 function formatPrice(price) {
-    return `$${price.toLocaleString('es-MX')}`;
+    return `S/${price}`;
 }
 
-/**
- * Generate WhatsApp URL
- */
 function generateWhatsAppUrl(message) {
     const encodedMessage = encodeURIComponent(message);
     return `https://wa.me/${CONFIG.whatsappNumber}?text=${encodedMessage}`;
 }
 
-/**
- * Generate product message for WhatsApp
- */
 function generateProductMessage(product) {
-    return `${CONFIG.defaultMessage} ${product.name} - ${formatPrice(product.price)} MXN`;
+    return `${CONFIG.defaultMessage} ${product.name} - ${formatPrice(product.price)}`;
+}
+
+function renderStars(rating) {
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 >= 0.5;
+    let stars = '';
+    
+    for (let i = 0; i < fullStars; i++) {
+        stars += '<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+    }
+    
+    return stars;
 }
 
 // ========================================
 // Render Functions
 // ========================================
-
-/**
- * Create product card HTML
- */
 function createProductCard(product) {
     const card = document.createElement('div');
     card.className = 'product-card';
@@ -238,37 +299,38 @@ function createProductCard(product) {
     const whatsappUrl = generateWhatsAppUrl(generateProductMessage(product));
     
     card.innerHTML = `
-        <div class="product-card-inner">
-            <div class="product-image">
-                ${badgeHtml}
-                <img src="${product.image}" alt="${product.name}" loading="lazy">
+        <div class="product-image">
+            ${badgeHtml}
+            <button class="product-wishlist" aria-label="Agregar a favoritos">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+            </button>
+            <img src="${product.image}" alt="${product.name}" loading="lazy">
+        </div>
+        <div class="product-info">
+            <span class="product-category">${product.category}</span>
+            <h3 class="product-name">${product.name}</h3>
+            <div class="product-rating">
+                ${renderStars(product.rating)}
+                <span>(${product.reviews})</span>
             </div>
-            <div class="product-info">
-                <span class="product-category">${product.category}</span>
-                <h3 class="product-name">${product.name}</h3>
-                <div class="product-details">
-                    <span class="product-size">Talla: ${product.size}</span>
-                </div>
-                <p class="product-price">
-                    ${formatPrice(product.price)}
-                    ${oldPriceHtml}
-                </p>
-                <a href="${whatsappUrl}" class="product-whatsapp" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                    </svg>
-                    Comprar por WhatsApp
-                </a>
+            <div class="product-price">
+                <span class="product-price-current">${formatPrice(product.price)}</span>
+                ${oldPriceHtml}
             </div>
+            <a href="${whatsappUrl}" class="product-whatsapp" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Comprar por WhatsApp
+            </a>
         </div>
     `;
     
     return card;
 }
 
-/**
- * Create offer card HTML
- */
 function createOfferCard(offer) {
     const card = document.createElement('div');
     card.className = 'offer-card';
@@ -288,31 +350,26 @@ function createOfferCard(offer) {
     };
     
     card.innerHTML = `
-        <div class="offer-card-inner">
-            <div class="offer-image">
-                ${iconSvgs[offer.icon] || iconSvgs.package}
-            </div>
-            <h3 class="offer-name">${offer.name}</h3>
-            <p class="offer-description">${offer.description}</p>
-            <p class="offer-price">
-                ${formatPrice(offer.price)}
-                <span class="offer-price-old">${formatPrice(offer.oldPrice)}</span>
-            </p>
-            <a href="${generateWhatsAppUrl(offer.message)}" class="offer-whatsapp" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-                Comprar
-            </a>
+        <div class="offer-image">
+            ${iconSvgs[offer.icon] || iconSvgs.package}
         </div>
+        <h3 class="offer-name">${offer.name}</h3>
+        <p class="offer-description">${offer.description}</p>
+        <p class="offer-price">
+            ${formatPrice(offer.price)}
+            <span class="offer-price-old">${formatPrice(offer.oldPrice)}</span>
+        </p>
+        <a href="${generateWhatsAppUrl(offer.message)}" class="offer-whatsapp" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Comprar
+        </a>
     `;
     
     return card;
 }
 
-/**
- * Filter products based on category and search query
- */
 function filterProducts() {
     return products.filter(product => {
         const matchesCategory = currentCategory === 'todos' || product.category === currentCategory;
@@ -321,9 +378,6 @@ function filterProducts() {
     });
 }
 
-/**
- * Render products grid
- */
 function renderProducts() {
     const filteredProducts = filterProducts();
     
@@ -343,9 +397,6 @@ function renderProducts() {
     }
 }
 
-/**
- * Render offers grid
- */
 function renderOffers() {
     offersGrid.innerHTML = '';
     
@@ -358,29 +409,17 @@ function renderOffers() {
 // ========================================
 // Event Listeners
 // ========================================
-
-/**
- * Initialize category tabs
- */
 function initCategoryTabs() {
     categoryTabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            // Update active state
             categoryTabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-            
-            // Update current category
             currentCategory = tab.dataset.category;
-            
-            // Re-render products
             renderProducts();
         });
     });
 }
 
-/**
- * Initialize search input
- */
 function initSearch() {
     let debounceTimer;
     
@@ -393,9 +432,28 @@ function initSearch() {
     });
 }
 
-/**
- * Initialize smooth scroll for anchor links
- */
+function initSearchOverlay() {
+    if (searchToggle && searchOverlay && searchClose) {
+        searchToggle.addEventListener('click', () => {
+            searchOverlay.classList.add('active');
+            searchInput.focus();
+        });
+        
+        searchClose.addEventListener('click', () => {
+            searchOverlay.classList.remove('active');
+            searchInput.value = '';
+            searchQuery = '';
+            renderProducts();
+        });
+        
+        searchOverlay.addEventListener('click', (e) => {
+            if (e.target === searchOverlay) {
+                searchOverlay.classList.remove('active');
+            }
+        });
+    }
+}
+
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -406,16 +464,12 @@ function initSmoothScroll() {
                     behavior: 'smooth',
                     block: 'start'
                 });
-                // Close mobile menu if open
                 closeMobileMenu();
             }
         });
     });
 }
 
-/**
- * Initialize mobile menu
- */
 function initMobileMenu() {
     const menuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -427,7 +481,6 @@ function initMobileMenu() {
         menuBtn.classList.toggle('active');
     });
     
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
             closeMobileMenu();
@@ -445,9 +498,6 @@ function closeMobileMenu() {
     }
 }
 
-/**
- * Initialize scroll reveal animations
- */
 function initScrollReveal() {
     const revealElements = document.querySelectorAll('.reveal');
     
@@ -468,21 +518,24 @@ function initScrollReveal() {
     revealElements.forEach(el => observer.observe(el));
 }
 
-/**
- * Initialize hover physics for buttons
- * CSS handles all transitions now — this just ensures touch devices get proper :active feedback
- */
-function initButtonPhysics() {
-    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-    
-    document.querySelectorAll('.btn, .product-whatsapp, .offer-whatsapp').forEach(btn => {
-        btn.addEventListener('touchstart', () => {
-            btn.style.transform = 'scale(0.97)';
-        }, { passive: true });
-        
-        btn.addEventListener('touchend', () => {
-            btn.style.transform = '';
-        }, { passive: true });
+function initCategoryCards() {
+    document.querySelectorAll('.category-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            e.preventDefault();
+            const category = card.dataset.category;
+            
+            categoryTabs.forEach(t => t.classList.remove('active'));
+            const targetTab = document.querySelector(`.tab[data-category="${category}"]`);
+            if (targetTab) targetTab.classList.add('active');
+            
+            currentCategory = category;
+            renderProducts();
+            
+            document.getElementById('productos').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
     });
 }
 
@@ -490,22 +543,20 @@ function initButtonPhysics() {
 // Initialize App
 // ========================================
 function init() {
-    // Render initial content
     renderProducts();
     renderOffers();
     
-    // Initialize event listeners
     initCategoryTabs();
     initSearch();
+    initSearchOverlay();
     initSmoothScroll();
     initMobileMenu();
     initScrollReveal();
-    initButtonPhysics();
+    initCategoryCards();
     
-    console.log('TIENDA NICO2 - Catálogo inicializado');
+    console.log('Reina Glowup - Catálogo inicializado');
 }
 
-// Run init when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
 } else {
