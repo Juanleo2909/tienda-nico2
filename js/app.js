@@ -22,7 +22,7 @@ const products = [
         price: 189,
         oldPrice: 249,
         size: 'S-XL',
-        image: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600',
+        image: 'https://images.unsplash.com/photo-1612847760086-f481d7b93de2?w=600',
         badge: '-24%',
         rating: 4.8,
         reviews: 128
@@ -34,7 +34,7 @@ const products = [
         price: 89,
         oldPrice: null,
         size: 'XS-L',
-        image: 'https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600',
+        image: 'https://images.unsplash.com/photo-1609533947329-f3e148473d45?w=600',
         badge: 'Nuevo',
         rating: 4.9,
         reviews: 96
@@ -58,7 +58,7 @@ const products = [
         price: 59,
         oldPrice: 79,
         size: 'S-M',
-        image: 'https://images.unsplash.com/photo-1583846783214-7229a91b20ed?w=600',
+        image: 'https://images.unsplash.com/photo-1609533960426-1e79f14e787f?w=600',
         badge: '-25%',
         rating: 4.6,
         reviews: 76
@@ -70,7 +70,7 @@ const products = [
         price: 99,
         oldPrice: null,
         size: 'XS-L',
-        image: 'https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=600',
+        image: 'https://images.unsplash.com/photo-1614098097306-c67b8020c04e?w=600',
         badge: null,
         rating: 4.8,
         reviews: 64
@@ -82,7 +82,7 @@ const products = [
         price: 119,
         oldPrice: null,
         size: 'S-XXL',
-        image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600',
+        image: 'https://images.unsplash.com/photo-1528812969535-4bcefc071532?w=600',
         badge: null,
         rating: 4.7,
         reviews: 52
