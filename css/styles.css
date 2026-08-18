@@ -849,7 +849,7 @@ button {
     font-weight: 500;
     color: var(--color-text-secondary);
     background-color: transparent;
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-rose);
     border-radius: var(--radius-full);
     white-space: nowrap;
     transition: all var(--transition-fast);
@@ -858,14 +858,14 @@ button {
 @media (hover: hover) and (pointer: fine) {
     .tab:hover {
         color: var(--color-text);
-        border-color: var(--color-text-secondary);
+        border-color: var(--color-accent);
     }
 }
 
 .tab.active {
-    background-color: var(--color-text);
-    color: var(--color-bg);
-    border-color: var(--color-text);
+    background-color: var(--color-rose);
+    color: white;
+    border-color: var(--color-rose);
 }
 
 .products-grid {
@@ -1322,8 +1322,8 @@ a.contact-value:hover {
    ======================================== */
 .footer {
     padding: var(--space-3xl) var(--space-xl);
-    background-color: var(--color-text);
-    color: var(--color-bg);
+    background-color: #C9A87C;
+    color: white;
 }
 
 .footer-container {
